@@ -5,6 +5,10 @@ import (
 	"fmt"
 )
 
+func printStuff(printer Printer.Printer) {
+	printer.Print()
+}
+
 func main() {
 	text := []string{
 		"This is the header",
@@ -15,7 +19,8 @@ func main() {
 	pp := Printer.NewPlainPrinter(text)
 	sp := Printer.NewSquarePrinter(text)
 
-	pp.Print()
+	printStuff(&pp)
 	fmt.Println()
-	sp.Print()
+	printStuff(&sp)
+
 }
